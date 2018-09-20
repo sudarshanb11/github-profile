@@ -1,0 +1,64 @@
+/*Common utilities class name*/
+.font-20 {
+  font-size: 20px;
+}
+.font-24 {
+  font-size: 24px;
+}
+.font-300 {
+  font-weight: 300;
+}
+.font-600 {
+  font-weight: 600;
+}
+.font-700 {
+  font-weight: 700;
+}
+.p-t-b-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+/*Custom class CSS*/
+.page {
+  margin-top: 24px;
+}
+.git-profile-pic {
+  img {
+    border-radius: 6px;
+  }
+}
+.git-name-container {
+  padding: 16px 0;
+  span {
+    display: block;
+  }
+  .username {
+    color: #666;
+  }
+}
+.search-box {
+  background-color: rgba(255,255,255,0.125);
+  color: #fff;
+  width: 300px;
+  margin-top: 3px;
+  border: none;
+  height: 30px;
+}
+
+/*Overwriting the Bootstrap CSS*/
+.container {
+  width: 1010px;
+}
+.navbar.bg-dark {
+  background-color: #24292e !important;
+  padding: 8px 0;
+  form {
+
+  }
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+}
