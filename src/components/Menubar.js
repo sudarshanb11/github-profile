@@ -19,7 +19,6 @@ export default class Menubar extends React.Component {
       isOpen: !this.state.isOpen
     });
   }
-
   render() {
     return (
       <Navbar color="dark" dark expand="md">
@@ -61,7 +60,7 @@ export default class Menubar extends React.Component {
             </UncontrolledDropdown>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                <img width="20" height="20" src={ProfilePic} alt="Profile picture"/>
+                <img width="20" height="20" src={ProfilePic} className='menu-profilepic' alt="Profile picture"/>
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem tag="a" href="/blah">
