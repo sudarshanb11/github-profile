@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Row, Col, Button, Nav, NavItem, NavLink } from 'reactstrap';
+import { Nav, NavItem, NavLink } from 'reactstrap';
 import { FaGithub } from 'react-icons/fa';
 
-export default class Menubar extends React.Component {
+export default class Menubar extends Component {
   render(){
     return (
       <div className="footer bdr-top-1 bdr-gray">
