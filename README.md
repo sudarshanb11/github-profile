@@ -1,10 +1,10 @@
 To setup this project
 
 cli
-> git clone git@github.com:sudarshanb11/github-profile.git
-> cd github-profile
-> npm install
-> npm start
+ git clone git@github.com:sudarshanb11/github-profile.git
+ cd github-profile
+ npm install
+ npm start
 
 Currently the app show up my github profile details, to change that 
 
