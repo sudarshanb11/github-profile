@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'reactstrap';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 
-const ProfileColumn = () => (
+const ProfileColumn = (props) => (
   <Query
     query={gql`
       {
@@ -36,7 +36,7 @@ const ProfileColumn = () => (
       const {id, name, description, primaryLanguage} = node
       return (
         <div className="repository">
-          <div className="name font-20 font-600 mb-1">{name}</div>
+          <div className="name font-20 font-600 mb-1" onClick={() => props.callback(name)}>{name}</div>
           <div className="description">
             <Row>
               <Col xs="9"><div className='font-14 text-gray mb-2'>{description}</div></Col>

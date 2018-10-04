@@ -31,7 +31,7 @@
 .footer {
   margin-top: 40px;
   padding-top: 40px;
-  padding-bottom: 8px;
+  padding-bottom: 48px;
   display: flex;
   justify-content: space-between;
   .footer-logo a {
@@ -68,7 +68,6 @@
 }
 
 .repositories-list {
-  //margin-top: 16px;
   .repository {
     padding: 24px 0;
     border-bottom: 1px #e1e4e8 solid!important;
@@ -92,6 +91,12 @@
       top: 1px;
     }
   }
+}
+
+.repo-page-head {
+  background-color: #fafbfc;
+  padding-top: 20px;
+  margin-bottom: 20px;
 }
 
 /*Overwriting the Bootstrap CSS*/
