@@ -22,8 +22,8 @@ export default class Menubar extends React.Component {
   render() {
     return (
       <Navbar color="dark" dark expand="md">
-        <div className='container'>
-          <NavbarBrand href="/"><FaGithub size='34px' className="icon" /></NavbarBrand>
+        <div className='container-fluid'>
+          <NavbarBrand href="/"><FaGithub size='33px' className="icon" /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="mr-auto"  navbar>
@@ -43,7 +43,7 @@ export default class Menubar extends React.Component {
               <NavLink href="/">Explore</NavLink>
             </NavItem>
           </Nav>
-          <Nav className="mr-auto"  navbar>
+          <Nav className="ml-auto"  navbar>
             <NavItem>
               <NavLink href="/"><FaBell size='16px' /></NavLink>
             </NavItem>

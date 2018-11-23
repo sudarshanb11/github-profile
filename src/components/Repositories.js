@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col, Button } from 'reactstrap';
-import { Query } from "react-apollo";
-import gql from "graphql-tag";
+import { Row, Col } from 'reactstrap'
+import { Query } from 'react-apollo'
+import gql from 'graphql-tag'
 
-const ProfileColumn = (props) => (
+const Repositories = (props) => (
   <Query
     query={gql`
       {
@@ -13,7 +13,6 @@ const ProfileColumn = (props) => (
           repositories(first: 100) {
             edges {
               node {
-                id
                 name
                 description
                 primaryLanguage {
@@ -33,10 +32,10 @@ const ProfileColumn = (props) => (
         return null;
     }
     return viewer.repositories.edges.map(({node}) => {
-      const {id, name, description, primaryLanguage} = node
+      const {name, description, primaryLanguage} = node
       return (
         <div className="repository">
-          <div className="name font-20 font-600 mb-1" onClick={() => props.callback(name)}>{name}</div>
+          <div className="name font-20 font-600 mb-1" onClick={() => props.callback(viewer.login, name)}>{name}</div>
           <div className="description">
             <Row>
               <Col xs="9"><div className='font-14 text-gray mb-2'>{description}</div></Col>
@@ -51,4 +50,4 @@ const ProfileColumn = (props) => (
   </Query>
 );
 
-export default ProfileColumn
+export default Repositories

@@ -14,7 +14,7 @@ const client = new ApolloClient({
   request: operation => {
     operation.setContext({
       headers: {
-        authorization: `Bearer 5302636f85bd3b2196453aa3ce4d7eea59d8eb05`,
+        authorization: `Bearer 681bf9735917e44370779f1a7c364e2412c640f2`,
       },
     });
   },
@@ -22,10 +22,10 @@ const client = new ApolloClient({
 
 class App extends Component {
   componentWillMount () {
-    this.setState({currentRepo: null})
+    this.setState({viewer: '', currentRepo: null})
   }
 
-  callBack = (repo) => this.setState({currentRepo: repo})
+  callBack = (viewer, repo) => this.setState({viewer, currentRepo: repo})
 
   render() {
     console.log(this.state)
@@ -33,8 +33,11 @@ class App extends Component {
       <ApolloProvider client={client}>
         <div className="App">
           <Menubar/>
-            <ProfilePage callback={this.callBack} />
-            <RepositoryPage repo={this.state.currentRepo} />
+            {
+              this.state.currentRepo 
+              ? <RepositoryPage repoName={this.state.currentRepo} />
+              : <ProfilePage callback={this.callBack} />
+            }
           <Footer />
         </div>
       </ApolloProvider>
