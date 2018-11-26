@@ -23,13 +23,14 @@ class RepoPageHeader extends Component {
     }
     render() {
         const {viewer} = this.props.data
+        const {repoName} = this.props
         return (
             <div>
             {viewer && <div className='repo-page'>
                 <div className='page-header'>
                     <Container>
                         <div className='head'>
-                            <div className='title'><Octicon icon={Repo}/> <span>{viewer.login}</span> / <span className='font-600'>{viewer.repository.name}</span></div>
+                            <div className='title'><Octicon icon={Repo}/> <span>{viewer.login}</span> / <span className='font-600'>{repoName}</span></div>
                             <div className='actions'>
                             <div className='action'>
                                 <div className='name'><Octicon icon={Eye}/> Unwatch</div>

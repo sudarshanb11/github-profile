@@ -1,9 +1,8 @@
-import React from 'react';
+import React from 'react'
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink,
-  UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Form } from 'reactstrap';
-import { FaGithub, FaBell, FaPlus } from 'react-icons/fa';
-import ProfilePic from '././../images/profile-pic.png';
-
+  UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Form } from 'reactstrap'
+import Octicon, {MarkGithub, Bell, Plus} from '@githubprimer/octicons-react'
+import ProfilePic from '././../images/profile-pic.png'
 
 export default class Menubar extends React.Component {
   constructor(props) {
@@ -23,7 +22,7 @@ export default class Menubar extends React.Component {
     return (
       <Navbar color="dark" dark expand="md">
         <div className='container-fluid'>
-          <NavbarBrand href="/"><FaGithub size='33px' className="icon" /></NavbarBrand>
+          <NavbarBrand href="/"><Octicon icon={MarkGithub} size='33px' /></NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="mr-auto"  navbar>
@@ -45,11 +44,11 @@ export default class Menubar extends React.Component {
           </Nav>
           <Nav className="ml-auto"  navbar>
             <NavItem>
-              <NavLink href="/"><FaBell size='16px' /></NavLink>
+              <NavLink href="/"><Octicon icon={Bell} size='16px' /></NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                <FaPlus size='16px' />
+                <Octicon icon={Plus} size='16px' />
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem tag="a" href="/blah">New repository</DropdownItem>

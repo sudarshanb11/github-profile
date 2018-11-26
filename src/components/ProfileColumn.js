@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { FaEnvelope } from 'react-icons/fa';
+import Octicon, {Mail} from '@githubprimer/octicons-react'
 import ProfilePic from './../images/profile-pic.png';
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
@@ -35,7 +35,7 @@ const ProfileColumn = () => (
            <Button className="btn-block btn-white-gradient">Add a bio</Button>
         </div>
         <div className='p-t-b-16 bdr-top-1 bdr-gray font-14 '>
-           <FaEnvelope />&nbsp;<a href="/">{viewer.email}</a>
+           <Octicon icon={Mail} />&nbsp;<a href="/">{viewer.email}</a>
         </div>
         <div className='p-t-b-16 bdr-top-1 bdr-gray'>
           <span className="font-600">Organaizations</span>

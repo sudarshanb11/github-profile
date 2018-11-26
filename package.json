@@ -42,7 +42,6 @@
     "react-apollo": "^2.3.1",
     "react-dev-utils": "^5.0.3",
     "react-dom": "^16.6.3",
-    "react-icons": "^3.2.2",
     "react-moment": "^0.8.4",
     "react-router-dom": "^4.3.1",
     "reactstrap": "^6.5.0",

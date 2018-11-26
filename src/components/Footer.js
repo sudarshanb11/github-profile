@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Container, Nav, NavItem, NavLink } from 'reactstrap';
-import { FaGithub } from 'react-icons/fa';
+import React, { Component } from 'react'
+import { Container, Nav, NavItem, NavLink } from 'reactstrap'
+import Octicon, {MarkGithub} from '@githubprimer/octicons-react'
 
 export default class Menubar extends Component {
   render(){
@@ -29,7 +29,7 @@ export default class Menubar extends Component {
           </Nav>
           <div className="footer-logo">
             <a href="/">
-              <FaGithub size='26px' />
+              <Octicon icon={MarkGithub} size='26px'/>
             </a>
           </div>
           <Nav className="footer-menu">
