@@ -3,8 +3,8 @@ import { Container, Row, Col, TabContent, TabPane, Nav, NavItem, NavLink } from 
 import classnames from 'classnames'
 import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import Octicon, {Repo, Eye, Star, RepoForked, Code, IssueOpened, IssueClosed, Check} from '@githubprimer/octicons-react'
-import Moment from 'react-moment';
+import Octicon, {Repo, Eye, Star, RepoForked, Code, IssueOpened, Check} from '@githubprimer/octicons-react'
+import IssueTabContent from './IssueTabContent'
 
 class RepoPageHeader extends Component {
     constructor(props) {
@@ -24,6 +24,9 @@ class RepoPageHeader extends Component {
     render() {
         const {viewer} = this.props.data
         const {repoName} = this.props
+        const issueCount = viewer && viewer.repository.issues.totalCount
+
+        console.log()
         return (
             <div>
             {viewer && <div className='repo-page'>
@@ -80,10 +83,14 @@ class RepoPageHeader extends Component {
                             <Col sm="12">
                                 <div className='list-box'>
                                     <div className='list-header'>
-                                        <a className='head-item'><Octicon icon={IssueOpened}/> 0 Open</a>
-                                        <a className='head-item'><Octicon icon={Check}/> 0 Closed</a>
+                                        <a className='head-item'><Octicon icon={IssueOpened}/> {viewer.repository.issues.nodes.filter(l => l.state === "OPEN").length} Open</a>
+                                        <a className='head-item'><Octicon icon={Check}/> {viewer.repository.issues.nodes.filter(l => l.state === "CLOSED").length} Closed</a>
                                     </div>
-                                    {this.props.repoName && <IssueTabContent login={viewer.login} issues={viewer.repository.issues.nodes}/>}
+                                    {
+                                        issueCount
+                                        ? <IssueTabContent login={viewer.login} issues={viewer.repository.issues.nodes}/>
+                                        : <div>No Issues</div>
+                                    }
                                 </div>
                             </Col>
                         </Row>
@@ -95,21 +102,6 @@ class RepoPageHeader extends Component {
         )
     }
   }
-
-const IssueTabContent = ({login, issues}) => {
-    return issues.map(t => {
-        const {title, number, closed, updatedAt} = t
-        return (
-            <div className='list-item'>
-                <div className='status'>{ closed ? <Octicon icon={IssueClosed} className='state-close' /> : <Octicon icon={IssueOpened} className='state-open' />}</div>
-                <div className='content'>
-                    <div className='main'> {title}</div>
-                    <div className='sub'>#{number} { closed ? "closed" : "opened" } <Moment fromNow>{updatedAt}</Moment> by {login}</div>
-                </div>
-            </div>
-        )
-    })
-}
 
 export default graphql(gql`
 query($repo: String!){ 
@@ -126,6 +118,7 @@ query($repo: String!){
                     number
                     closed
                     updatedAt
+                    state
                 }
             }
         }

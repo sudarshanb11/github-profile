@@ -10,7 +10,7 @@ const Repositories = (props) => (
         viewer {
           login
           name
-          repositories(first: 100) {
+          repositories(first: 100, ownerAffiliations: OWNER) {
             edges {
               node {
                 name
