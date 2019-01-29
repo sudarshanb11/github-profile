@@ -6,6 +6,7 @@ import ProfilePage from './ProfilePage'
 import RepositoryPage from './RepositoryPage'
 import './App.scss'
 import './Utilities.scss'
+import './overBootstrap.scss'
 import ApolloClient from "apollo-boost"
 import { ApolloProvider } from "react-apollo"
 
@@ -14,7 +15,7 @@ const client = new ApolloClient({
   request: operation => {
     operation.setContext({
       headers: {
-        authorization: `Bearer efce261f107b46c432c437f8ae76b6a9d9956e55`,
+        authorization: `Bearer 3ad67b70a783dcffc36faf799c8728e4374dc085`,
       },
     });
   },
@@ -34,7 +35,7 @@ class App extends Component {
         <div className="App">
           <Menubar/>
             {
-              this.state.currentRepo 
+              this.state.currentRepo
               ? <RepositoryPage repoName={this.state.currentRepo} />
               : <ProfilePage callback={this.callBack} />
             }

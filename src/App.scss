@@ -117,7 +117,7 @@
     }
     .actions {
       display: flex;
-      
+
     }
     .action {
       display: flex;
@@ -126,7 +126,7 @@
       border-radius: 2.5px;
       .name {
         border-right: 1px solid #d1d5da;
-        
+
         padding: 3px 10px;
         font-size: 12px;
         font-weight: 600;
@@ -142,7 +142,7 @@
         line-height: 20px;
       }
     }
-  
+
   }
   .nav-tabs {
     border-bottom: 0;
@@ -205,41 +205,6 @@
         color: #586069;
       }
 
-    }
-  }
-}
-
-/*Overwriting the Bootstrap CSS*/
-.container {
-  width: 1010px;
-}
-.navbar.bg-dark {
-  background-color: #24292e !important;
-  padding: 8px 0;
-  form {
-
-  }
-}
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-.nav-tabs {
-  border-bottom: solid 1px #d1d5da;
-  .nav-link {
-    border: 0;
-    border-bottom: 2px solid transparent;
-    padding: 16px 8px;
-    margin-right: 16px;
-    font-size: 14px;
-    line-height: 1.5;
-    color: #586069;
-    &.active {
-      font-weight: 600;
-      color: #24292e;
-      border-bottom-color: #e36209;
     }
   }
 }
